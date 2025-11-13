@@ -1,11 +1,11 @@
 package org.firstinspires.ftc.teamcode;
 
-public class PIDAngle {
-double Kp;
+public class PID {
+double Kp =1;
 
-double Ki;
+double Ki =0;
 
-double Kd;
+double Kd=0;
 
 double output;
 
@@ -13,7 +13,7 @@ double output;
     double integral = 0;
     double derivative = 0;
     double prevError = 0;
-    public double  pidAngle(double targetAngle, double currentAngle){
+    public double  pid(double targetAngle, double currentAngle){
         error = targetAngle - currentAngle;
         integral = integral + error;
         derivative = error - prevError;
