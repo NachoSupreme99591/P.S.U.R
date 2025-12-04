@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.teamcode.utils;
+package org.firstinspires.ftc.teamcode.autoUtils;
 
 
 public  class angleFInder3000  {
@@ -6,7 +6,7 @@ public  class angleFInder3000  {
     double y;
     double targetAngle;
     double power;
-    PID anglePId = new PID(0,0,0);
+    public PID anglePId = new PID(0.15,0,0);
 
     /** xyxy
 
@@ -19,7 +19,7 @@ public  class angleFInder3000  {
     public double findAngle(double startPosX, double startPosY, double endPosX, double endPosY, double currentAngle){
         x = endPosX - startPosX;
         y = endPosY - startPosY;
-       targetAngle =  Math.toDegrees(Math.atan2(y,x));
+       targetAngle =  Math.toDegrees(Math.atan2(x, y));
 
        power = anglePId.usePID(currentAngle,targetAngle);
 
